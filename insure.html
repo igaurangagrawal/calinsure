@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title> Calculate the insurance amount </title>
+	
+	
+	
+	</head>
+	
+	<body>
+	
+		<script type='text/javascript'>
+
+
+function calculate(zone,age,cc)
+			var zone; // a , b  -- done 
+			var cc; // <1000 1001-1500 1500  -- done 
+			var age;  // <5 5-10 >10                     --------- done 
+	var od; //
+			var act; // 670 800 2500 670 800 2500  -- done
+			var pa=100; // 100 all  -- done 
+			var ncb;  // 20 25 35 45 50  
+			var stax; // 10.3 %  -- done 
+			var cost;
+			var amount; // stores value 
+			var random; // 
+		if (zone=="a")
+{
+if (cc<1000)
+{
+	if (age<5){
+		od=3.127;
+		
+	}
+	elseif(cc>1000 && cc<1500)
+	{
+	od=3.283;
+		
+	}
+	
+	elseif(cc<1500)
+	{
+		
+		od=3.362;
+	}
+	
+	act=670;
+	
+}
+
+
+if (cc<1000)
+{
+	if (age<5){
+		
+			od=3.283;
+	}
+	elseif(cc>1000 && cc<1500)
+	{
+		
+			od=3.447;
+	}
+	
+	elseif(cc<1500)
+	{
+			od=3.529;
+		
+	}
+	
+	act=800;
+	
+}
+
+
+if (cc<1500)
+{
+	if (age<5){
+		
+			od=3.440;
+	}
+	elseif(cc>1000 && cc<1500)
+	{
+		
+		od=3.612;	
+	}
+	
+	elseif(cc<1500)
+	{
+		
+		od=3.698;	
+	}
+	
+	act=2500;
+}
+
+
+amount=(cost*od)/100; // simple yo yo
+random=amount+act+pa;
+
+document.write(random);
+alert("random");
+return random;
+
+	
+} 
+
+// b starts from here 
+
+else (zone=="b")
+{
+if (cc<1000)
+{
+if (age<5){
+od=3.039;
+
+}
+elseif(cc>1000 && cc<1500)
+{
+od=3.191;
+
+}
+
+elseif(cc<1500)
+{
+
+od=3.267;
+}
+
+act=670;
+
+
+}
+
+
+if (cc<1000)
+{
+if (age<5){
+
+	od=3.191;
+}
+elseif(cc>1000 && cc<1500)
+{
+
+	od=3.351;
+}
+
+elseif(cc<1500)
+{
+	od=3.430;
+
+}
+
+act=800;
+
+}
+
+
+if (cc<1500)
+{
+if (age<5){
+
+	od=3.343;
+}
+elseif(cc>1000 && cc<1500)
+{
+
+od=3.510;	
+}
+
+elseif(cc<1500)
+{
+
+od=3.594;	
+}
+
+act=2500;
+
+
+} 
+
+
+
+amount=(cost*od)/100; // simple yo yo
+random=amount+act+pa;
+
+document.write(random);
+alert("random");
+return random;
+
+
+}
+
+
+
+
+		</script>
+
+<form  name="calinsure" action="" method="GET">
+Zone	<input type="text" name="zone" value="b"><Br>
+Cost of Car	<input type="text" name="cost" value=""><Br>
+	Age of Vehicle	<input type="text" name="age"><Br>
+CC of Engine			<input type="text" name="cc"><Br>
+	NCB 	20 <input type="radio" name="20"> 25  <input type="radio" name="25"> 35 <input type="radio" name="35"> 45 <input type="radio" name="45"> 50 <input type="radio" name="50"><Br>
+		
+		Premium	<input type="text" name="premium" value="calculate(zone,age,cc)"><Br>
+				<input type="submit" name="calc" value="Calculate Insurance" onClick="calculate(zone,age,cc)"><Br>
+				
+</form>
+		
+		</body>
+		
+</html>
